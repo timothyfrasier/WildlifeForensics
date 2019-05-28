@@ -14,6 +14,9 @@
 %-- Package for Links --%
 \usepackage{hyperref} 
 
+%-- Package for left-justifying columns of specified width --%
+\usepackage{array}  % required for the raggedright function
+
 %-- Set paragraph spacing and indentation --%
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{0.5cm}
@@ -66,7 +69,7 @@
 					& E-mail: timothy.frasier@smu.ca\\
 					& Tel: 902-491-6382\\
 		\\
-		\textbf{Office Hours:} & TWR 12:00-2:00, or by appointment				
+		\textbf{Office Hours:} & TR 1:00--4:00 or by appointment				
 	\end{tabular}
 
 	\begin{center}
@@ -93,7 +96,7 @@
 	%  Course Sites                    %
 	%----------------------------------%
 	\begin{tabular}{@{} p{2.3cm} p{13.9cm}}
-		\textbf{Course Sites:} & There is a Brightspace page for FRSC/BIOL 4002. I will post lecture slides, assignment instructions, and other course materials after class. You are responsible for checking the site regularly. Online material alone will not be sufficient to replace lecture attendance.\\
+		\textbf{Course Site:} & This course has an associated Brightspace page. It will be the main way in which information and materials will be distributed to you: I will post readings, lecture slides, assignment instructions, and other course materials there. You are responsible for checking the site regularly.\\
 	\end{tabular}
 
 
@@ -102,9 +105,7 @@
 	%----------------------------------%
 	\textbf{Course Description:}\\
 	\begin{tabular}{@{} p{2.3cm} p{13.9cm}}
-		 & Seminars followed by discussions based on recent advances in biology. In consultation with the Honours advisor, the honours students will select and prepare the topics for presentation to biology faculty and students.\\
-		 \\
-		 & Honours Seminar is offered exclusively to Honours students in Biology that are simultaneously enrolled in BIOL 4500. The objective of this course is to provide instruction and/or exposure to critical thinking and scientific communication. Students will be given guidance on how to write their research thesis and how to present scientific research orally and in the form of a poster presentation. Invited speakers will provide insight into various areas of biological research.
+		 & The goals of this course are for students to learn about the techniques involved in wildlife forensics, how the resulting data are interpreted, and how this information is used in a legal setting. Although many aspects of wildlife forensics are covered, there is a focus on DNA methods.\\
 	\end{tabular}
 
 	%------------%
@@ -116,37 +117,99 @@
 	%  Pre-requisites                  %
 	%----------------------------------%
 	\begin{tabular}{@{} p{2.6cm} l }
-		\textbf{Pre-requisites:} & Honours standing in Biology 
+		\textbf{Pre-requisites:} & BIOL 2307 (Genetics)
 	\end{tabular}
 
 	%----------------------------------%
 	%  Required Materials             %
 	%----------------------------------%
-	\textbf{Required Materials:}\\
-	\begin{tabular}{@{} p{2.3cm} p{13.9cm}}
-		& \emph{Writing Papers in the Biological Sciences}, 5th edition. by V.E. McMillan. Bedford/St. Martin's
-	\end{tabular}	
+	\begin{tabular}{@{} l l }
+		\textbf{Required Materials:} & No textbook. Required readings will be provided as needed.
+	\end{tabular}
 
 	\newpage
+	%------------------------------------%
+	% Methods of Course Delivery %
+	%------------------------------------%
+	\textbf{Methods of Course Delivery:}\\
+	Class periods will alternate between lectures and case studies. The lecture periods will focus on introducing major new ideas, concepts, and information that have general relevance to wildlife forensics. Every-other class period will focus on a particular case study, usually species-based, but sometimes concept-based. The first two of these will be led by the professor, and the rest will be led by students. For the laboratory component, students will learn all of the theory and techniques associated with molecular species identification, which will be applied to food purchased at local restaurants.\\
+	
+	
 	%-----------------------------------%
 	%      Learning Outcomes         %
 	%-----------------------------------%
 	\textbf{Learning Outcomes:}\\
 	By the end of this course, students should be able to:
 		\begin{itemize}[topsep=-8pt]
-			\item Identify work characteristics that promote independent research and writing.
-			\item Recognize the difference between primary \& secondary sources of information and the means by which
-they are obtained
-			\item Construct a reasonable timeline to conduct academic research and writing
-			\item Describe the sections of a thesis and scientific journal article and the contents that belong in each
-section
-			\item Write and edit an Honours thesis
-			\item Create, edit, and present a 12 minute oral presentation
-			\item Create, edit, and present a poster at a scientific conference
-			\item Provide constructive criticism on oral presentations, poster presentations, and scientific writing to your
-peers and other scientists.\\
+			\item Explain the major national and international scenarios/situations leading to the main wildlife forensic issues, and what the underlying forces are.
+			\item Describe the major national and international laws, regulations, and policies/bodies relevant to wildlife forensics, and what roles they play.
+			\item Explain at least ten case studies in wildlife forensics, including the drivers, legal issues, and implications for wildlife.
+			\item Apply molecular species identification techniques for wildlife forensic cases, including an explanation of each step, how it works, and why it is used.
+			\item Explain the ways in which genetic techniques can be applied to wildlife forensics, as well as the strengths and weaknesses of each approach.
+			\item Give a scientific presentation that effectively teaches the class a topic, and lead the class in an effective and engaging discussion on that topic.\\
 		\end{itemize}
+
+	
+	\vspace{0.3cm}
+	%-----------------------------------%
+	%      Marking Scheme               %
+	%-----------------------------------%
+	\textbf{Marking Scheme:}
+		\begin{table}[H]
+		\centering
+			\begin{tabular}{l l}
+				\toprule
+				\textbf{Component} & \textbf{\% of Final Grade}\\
+				\midrule
+				Case study presentation \& discussion & 20\%\\
+				\addlinespace
+				Lab books (2 $\times$ 12.5\% each) & 25\%\\
+				\addlinespace
+				Midterm exam & 25\%\\
+				\addlinespace
+				Final Exam & 30\%\\
+				\midrule
+				\textbf{Total} & \textbf{100\%}\\
+				\bottomrule
+			\end{tabular}
+		\end{table}	
+
+
+	\newpage
+	%----------------------------------------%
+	%  Description of Course Components      %
+	%----------------------------------------%
+	\textbf{Description of Course Components:}
+		\begin{table}[H]
+			\begin{tabular}{@{} >{\raggedright}p{2.5cm} p{13.7cm}}
+				\textbf{Case study presentation \& discussion:} & The class will be divided into 10 teams of 2--3 students each. Each team will then be assigned a specific case study in wildlife forensics. Some introductory readings will also be provided to help each team get started. Each team must then:
+				\begin{enumerate}
+					\item Conduct further research on this topic to obtain a thorough understanding of it. This will require much more research than just reading the assigned documentation.
+					\item Effectively teach this case study to the rest of the class, on the assigned day. Through this, the rest of the class should obtain a more thorough understanding of the topic than they already have based on the assigned readings.
+					\item Lead an active discussion with the class on this topic.
+				\end{enumerate}\\
+				\addlinespace
+				\textbf{Lab books} & Your lab books will be collected and reviewed twice throughout the term to ensure that you are using them properly. Lab books are a key part of any type of lab work, and particularly so for a forensic technician whose lab book can be subpoenaed and used as evidence in a trial. Your lab book should be clean, clear, and easy to follow. It should explain not just WHAT you did, but also WHY you did it. Further details will be provided in class. If you miss a lab day, you should arrange with a friend to have them conduct the necessary processes on your sample---there will not be the time or opportunity to make these up. You should then write the appropriate information in your lab book but make it clear that another person (include their name) actually conducted that day's work on your sample.\\
+				\addlinespace
+				\textbf{Exams} & There will be two exams for this course: a midterm exam and a cumulative final exam. The midterm exam will be conducted during class time mid-way through the course, to assess understanding at this stage. The final exam will be scheduled by the Registrar during the formal exam period. Please see the University Special Exams policy (Academic Reg. \#10) for further information. These exams will generally be essay-style questions, with minimal or no use of multiple choice or fill in the blank. The rationale is that I want to assess whether or not you have really obtained new knowledge, and can put it into a correct context and interpretation, as opposed to just memorizing ``stuff''. I find this is easier to do with longer essay-style questions. You will get your exams back in class, but you cannot take them with you. If you want to review them in detail, you can do so at my office.\\
+			\end{tabular}
+		\end{table}		
 		
+		
+	%---------------------------------------------------------------------%
+	%  Student Responsibilities, Academic Integrity, & Code of Conduct    %
+	%---------------------------------------------------------------------%
+	\textbf{Student Responsibilities, Academic Integrity, \& Code of Conduct}
+		\begin{enumerate}[topsep=-8pt]
+			\item Treat your colleagues and instructor with respect and give others your attention when they are speaking.
+			\item Smart phones may be used to take notes, but all the sounds must be turned off and you should not receive/send calls/texts, or check email during class.
+			\item \textbf{Academic integrity: As in all courses, plagiarism and cheating will not be tolerated.} You must hand in your own work, written in your own words. Plagiarism will be dealt with according to policies outlined in the Academic Calendar. It is your responsibility to familiarize yourself with Saint Mary's policies on Academic Integrity by consulting the ``\emph{Academic Integrity and Student Responsibility}'' (p. 14--22) and ``\emph{Academic Regulations}'' (p. 23--38) sections of the \href{https://smu.ca/webfiles/AcademicCalendar2019-2020Undergraduate(PDF).pdf}{\textcolor{blue}{Academic Calendar}}, in order to be well informed on the consequences of dishonest behaviour.  
+			\item Technology in the classroom: Please do not record lectures without my direct approval.
+			\item \textbf{Late policy:} You will be penalized 5\% \emph{per day} that an assignment is late. Weekend days are included in this (\emph{i.e.,} Saturday and Sunday each count as one day).
+		\end{enumerate}
+		
+			
+\newpage		
 %------------------------------------%
 % Course Content & Schedule          %
 %------------------------------------%
@@ -217,90 +280,16 @@ peers and other scientists.\\
 			\bottomrule
 		\end{tabular}
 	\end{table}	
-
-
-	\newpage
-	%------------------------------------%
-	% Methods of Course Delivery %
-	%------------------------------------%
-	\textbf{Methods of Course Delivery:}\\
-	\begin{tabular}{@{} p{2.3cm} p{13.9cm}}
-		 & BIOL 4549 consists of a series of lectures, informal discussions, and exercises that are meant to teach, reinforce, and give you opportunities to practice the different skills required for effect communication in science. This includes the formats of critical review, research posters, research presentations, and the writing of theses or manuscripts. You must actively participate during the class and plan to attend every lecture/class period. \\
-	\end{tabular}	 
-
-\vspace{0.3cm}
-
-
-	%-----------------------------------%
-	%      Marking Scheme               %
-	%-----------------------------------%
-	\textbf{Marking Scheme:}
-		\begin{table}[H]
-		\centering
-			\begin{tabular}{l l}
-				\toprule
-				\textbf{Assignment} & \textbf{\% of Final Grade}\\
-				\midrule
-				\#1 Critique & 5\%\\
-				\addlinespace
-				\#2 SA Talks & 5\%\\
-				\addlinespace
-				\#3 Poster & 15\%\\
-				\addlinespace
-				\#4a Methods, Results \& Discussion & 12\%\\
-				\addlinespace
-				\#4b Review of Methods, Results \& Discussion & 8\%\\
-				\addlinespace
-				\#5 Oral Presentation & 15\%\\
-				\addlinespace
-				Participation & 2.5\%\\
-				\midrule
-				& \textbf{62.5\%}\\
-				\bottomrule
-			\end{tabular}
-		\end{table}	
-
-
-	%----------------------------------------%
-	%  Description of Course Components      %
-	%----------------------------------------%
-	\textbf{Description of Course Components:}
-		\begin{table}[H]
-			\begin{tabular}{@{} p{2.8cm} p{13.4cm}}
-				\textbf{Assignment \#1: Critique} & For this assignment, you will choose an article from the ``popular'' media that makes a scientific claim that you think is not realistic/believable. You will then find the scientific article(s) on which it was based, and determine if the results were presented appropriately in the popular article. You will then give a short (~10 minute) presentation on your findings to the class.\\
-				\addlinespace
-				\textbf{Assignment \#2: SA Talk} & For this assignment you will give a practice talk of your research so far, including any relevant \emph{expected} methods and results. \textbf{The class will vote on these talks to decide who goes to the Science Atlantic conference.}\\
-				\addlinespace
-				\textbf{Assignment \#3: Poster presentation} & You will create and present a poster of your work to the Biology department. You will be marked on the quality of your poster, your presentation, and your ability to answer question.\\
-				\addlinespace
-				\textbf{Assignment \#4: Thesis draft \& review} & For this assignment you will (a) turn in the remaining sections of your thesis (Materials and Methods, Results, and Discussion), and (b) review that of one of your classmates. I realize that you will not likely be done with all of your work at this stage. However, you should write out the Materials and Methods that you have done, as well as what you \emph{plan to do}. The same is true for the Results section where, if you do not have results yet, you should write what you \emph{expect} to find (including a potential figure). The Discussion section should be written accordingly. We will discuss this more in class.\\
-				\addlinespace
-				 \textbf{Assignment \#5: Oral presentation} & This is a 12 minute presentation of your work that will serves as a practice talk for your thesis defence. It should include background information, hypotheses/predictions, the specific objectives/questions you addressed, methods, results, discussion, and conclusions from your work.\\
-			\end{tabular}
-		\end{table}
-
-
-	\newpage
-	%---------------------------------------------------------------------%
-	%  Student Responsibilities, Academic Integrity, & Code of Conduct    %
-	%---------------------------------------------------------------------%
-	\textbf{Student Responsibilities, Academic Integrity, \& Code of Conduct}
-		\begin{enumerate}[topsep=0pt]
-			\item To ensure that all students and guest speakers have an interactive audience for their presentations \textbf{attendance and participation are mandatory}. You must let me know in advance of any known absences.
-			\item Treat your colleagues and instructors with respect and give others your attention when they are speaking.
-			\item Smart phones may be used to take notes, but all the sounds must be turned off and you should not receive/send calls/texts, or check email during class.
-			\item \textbf{Academic integrity: As in all courses, plagiarism and cheating will not be tolerated.} You must hand in your own work, written in your own words. Plagiarism will be dealt with according to policies outlined in the Academic Calendar. It is your responsibility to familiarize yourself with Saint Mary's policies on Academic Integrity by consulting the ``\emph{Academic Integrity and Student Responsibility}'' (p. 19--27) and ``\emph{Academic Regulations}'' (p. 28--42) sections of the \href{http://www.smu.ca/webfiles/UG%20calendar%202017-18%2024%20March%202017.pdf}{\textcolor{blue}{Academic Calendar}}, in order to be well informed on the consequences of dishonest behaviour.  
-			\item Technology in the classroom: Please do not record lectures without my direct approval.
-		\end{enumerate}
-
-	\vspace{0.3cm}
  
 
+	\newpage
 	%-------------------------%
 	%  Missed Classes         %
 	%-------------------------%
 	\textbf{Missed Classes:}\\
 	SMU faculty no longer accept ``sick notes'' for missed days of class or exams. Instead, if students miss a day of class, particularly when there was something due that day (e.g., a research presentation or mid-term exam), they need to read, print out, fill out, and sign a copy of the \href{http://www.smu.ca/webfiles/Declaration_of_Extenuating_Circumstances_withinTerm.pdf}{\textcolor{blue}{Declaration of Extenuating Circumstances}}. This should then be submitted to the professor, and they will keep a copy, and also give a copy to the Science Advising Centre for your records. 
+	
+	Students who miss the mid-term exam need to follow the instructions above, and then make an appointment to re-take the exam. There are pre-set times for this, which can be found by searching for ?missed exam dates? on the SMU website. Arrange this with me (the professor), and I will ensure that the correct materials are in the right place at the right time. If a student misses the final exam, then the university follows Academic Regulation \#10 from the \href{https://smu.ca/webfiles/AcademicCalendar2019-2020Undergraduate(PDF).pdf}{\textcolor{blue}{Academic Calendar}} (p. 30). For this, students do not interact with the professor. Instead, they consult with the Science Advising Centre, who then contacts the professor to develop a solution.
 
 
 	\vspace{0.3cm}
