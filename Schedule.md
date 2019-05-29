@@ -1,6 +1,6 @@
 # Schedule for Wildlife Forensics Preparation
 
-1. May 27-31: Finish syllabus
+1. ~~May 27-31: Finish syllabus~~
 2. Jun. 3-7: Write guide for case study presentations and discussions
 3. Jun. 10-14: Organize beginning readings for Case study #3 (Sep. 25) - students
 4. Jun. 10-14: Organize beginning readings for Case study #4 (Oct. 2) - students
