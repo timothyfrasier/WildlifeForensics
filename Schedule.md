@@ -11,7 +11,7 @@
 9. ~~Jun. 10-14: Organize beginning readings for Case study #9 (Nov. 20) - students~~
 10. ~~Jun. 10-14: Organize beginning readings for Case study #10 (Nov. 27) - students~~
 11. ~~Jun. 17-21: Content and reading for Day #1 (Sep. 4)~~
-12. Jun. 24-28: Content and reading for Day #2 (Sep. 9)
+12. ~~Jun. 24-28: Content and reading for Day #2 (Sep. 9)~~
 13. Jul. 1-5: Content and reading for Day #3, Case study #1, (Sep. 11)
 14. Jul. 8-12: Content and reading for Lab #1 (Sep. 11)
 15. Jul. 8-12: Content and reading for Day #4 (Sep. 16)
