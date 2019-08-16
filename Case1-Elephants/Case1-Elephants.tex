@@ -1,0 +1,1795 @@
+% Case Study #1 - Elephant Ivory
+
+%------------------------------------
+% Main Settings
+%------------------------------------
+\documentclass[10pt]{beamer}
+
+%--------------------------------------%
+% Set font, and frame title info    %
+%--------------------------------------%
+\usefonttheme{serif}
+\setbeamerfont{frametitle}{series=\bfseries}
+\setbeamerfont{framesubtitle}{series=\bfseries}
+
+%--------------------------------------
+% "Sub-settings"
+%--------------------------------------
+\setbeamertemplate{navigation symbols}{}		% Get rid of navigation symbols
+\setbeamertemplate{items}[default]				% Uses triangles and numbers instead of 3D balls (which I don't like)
+\setbeamertemplate{itemize items}[circle]		% Use circles instead of triangles for itemized lists
+\setbeamertemplate{footline}[frame number]      % Show frame #
+
+%-------------------------------------
+% Custom Commands
+%-------------------------------------
+\newtheorem{hypothesis}{Hypothesis}
+
+%---For Footnotes---%
+\usepackage{tikz}
+\usetikzlibrary{positioning,calc} % Needed to make angle connector arrows.
+\usepackage[absolute,overlay]{textpos}
+\newenvironment{reference}[2]{%
+	\begin{textblock*}{\textwidth}(#1,#2)
+		\tiny\bgroup\color{gray}}{\egroup\end{textblock*}}
+%------%		
+
+%----------------------------------------%
+% For making definitions in boxes        %
+%----------------------------------------%
+\usepackage{tcolorbox}
+
+%-- Packages for making nice tables --%
+\usepackage{booktabs}
+\usepackage{makecell}  % Required for specifying multiple rows within a table cell
+
+%--------------------------------%
+%     Custom Colours             %
+%--------------------------------%
+\usepackage{xcolor}
+\definecolor{myblue}{rgb}{0,0.3,0.6}
+\definecolor{myblue2}{rgb}{0,0.4,0.8}
+\setbeamercolor{frametitle}{fg=myblue}
+\setbeamercolor{framesubtitle}{fg=myblue2}
+\setbeamercolor{itemize item}{fg=myblue}
+\setbeamercolor{itemize subitem}{fg=myblue2}
+\setbeamercolor{enumerate item}{fg=myblue}
+\setbeamercolor{enumerate subitem}{fg=myblue2}
+
+
+%----------------------------------%
+% Creating nice blocks             %
+%----------------------------------%
+\setbeamercolor{block title}{bg=myblue, fg=white} %bg=background, fg=foreground
+\setbeamercolor{block body}{bg=myblue!20, fg=black} %bg=background, fg=foreground
+\setbeamerfont*{block title}{family=\sffamily, series=\bfseries, size=\large}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
+%------------------------------------------
+%  Begin Presentations
+%------------------------------------------
+\begin{document}
+
+
+%-----------------------%
+%  Title Slide          %
+%-----------------------%
+\begin{frame}
+	\begin{tikzpicture}[remember picture,overlay]
+		\fill[color=myblue, draw=none] (current page.west) rectangle(current page.north east);
+		\node at (2.0, 0.8) {\color{white}\LARGE{\textbf{Case Study \#1}}};
+		\node at (2.0, 0.1) {\color{gray!75}\LARGE{\textbf{Elephant Ivory}}};
+	\end{tikzpicture}
+\end{frame}
+
+
+%-------------------------%
+% References              %
+%-------------------------%
+\begin{frame}[t]
+\frametitle{References}
+\vspace{0.5cm}
+
+	Unless otherwise stated, information from:
+	
+	\vspace{0.5cm}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=0.65\textwidth]{figures/elephant_book.jpg}
+			\end{center}
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=0.65\textwidth]{figures/ivory_book.jpg}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}    
+
+
+
+%-------------------------%
+% Background I            %
+%-------------------------%
+\begin{frame}[t]
+\frametitle{Background}
+\vspace{0.5cm}
+
+	The elephant ivory trade is one of the most publicized wildlife forensics issues\\
+	
+	\vspace{0.5cm}
+	
+	\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				\includegraphics[width=0.9\textwidth]{figures/time.png}
+			\end{center}
+		\end{column}
+		
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				\includegraphics[width=0.9\textwidth]{figures/ivory_book.jpg}
+			\end{center}
+		\end{column}
+		
+		 \begin{column}{0.33\textwidth}
+			\begin{center}
+				\includegraphics[width=0.9\textwidth]{figures/ivory_game.jpg}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}            
+
+
+%-------------------------%
+% Background II           %
+%-------------------------%
+\begin{frame}[t]
+\frametitle{Background}
+\vspace{0.5cm}
+
+	``Ivory'' is the tusk, which is a tooth
+		\begin{itemize}
+			\item Their incisors, to be specific (unlike walrus tusks, which are their canines)
+			\item Grow continuously throughout their life
+		\end{itemize}
+	
+	\vspace{0.25cm}
+	
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=0.8\textwidth]{figures/skull1.png}
+			\end{center}
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=0.8\textwidth]{figures/skull2.jpg}
+			\end{center}
+		\end{column}
+	\end{columns}		
+\end{frame}   
+
+
+%-------------------------%
+% Background III          %
+%-------------------------%
+\begin{frame}[t]
+\frametitle{Background}
+\vspace{0.5cm}
+
+	Elephants have very interesting dentition
+		\begin{itemize}
+			\item 3 premolars (m1--m3)
+			\item 3 molars (m4--m6)
+			\item Progress horizontally rather than vertically
+			\item Have at different times of life
+		\end{itemize}
+	
+	\vspace{0.25cm}
+	
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{figures/teeth.pdf}
+	\end{center}	
+\end{frame}   
+
+
+%-------------------------%
+% Taxonomy I              %
+%-------------------------%
+\begin{frame}[t]
+\frametitle{Taxonomy}
+\vspace{0.25cm}
+
+	\begin{center}
+		Are 2 ``types'' of elephants\\
+	\end{center}	
+	
+	\vspace{0.25cm}
+	
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\textbf{\textcolor{myblue}{African Elephants}} genus \emph{Loxodonta}\\
+			
+			\begin{itemize}
+				\item Larger ears
+				\item Both males and females have tusks
+			\end{itemize}
+			
+			\vspace{0.25cm}
+			
+			\begin{center}
+				\includegraphics[width=0.8\textwidth]{figures/african.jpg}
+			\end{center}
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\textbf{\textcolor{myblue}{Asian Elephants}} genus \emph{Elephas}
+			
+			\begin{itemize}
+				\item Smaller ears
+				\item Only some males have tusks
+			\end{itemize}
+			
+			\vspace{0.25cm}
+			
+			\begin{center}
+				\includegraphics[width=0.6\textwidth]{figures/asian.png}
+			\end{center}
+		\end{column}
+	\end{columns}
+
+\end{frame}  
+
+
+%-------------------------%
+% Taxonomy II             %
+%-------------------------%
+\begin{frame}[t]
+\frametitle{Taxonomy}
+\vspace{0.25cm}
+
+	\begin{reference}{4mm}{92mm}
+		\rule{1.5cm}{0.25pt}\\
+		Tabude et al. (2008) \emph{Mammalia} \textbf{72}: 2--14.
+	\end{reference}
+	
+	Are members of a group called ``Afrotheria''
+		\begin{itemize}
+			\item Closest living relatives are manatees and dugongs(!)
+		\end{itemize}
+	
+	\vspace{0.5cm}
+	
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{figures/afrotheria.png}
+	\end{center}
+\end{frame}   
+
+
+%-------------------------%
+% Taxonomy III            %
+%-------------------------%
+\begin{frame}[t]
+\frametitle{Taxonomy}
+\vspace{0.5cm}
+
+	\begin{reference}{4mm}{89mm}
+		\rule{1.5cm}{0.25pt}\\
+		Ishida et al. (2011) \emph{PLoS One} \textbf{6}: e20642.\\
+		Roca et al. (2015) \emph{Annual Review of Animal Biosciences} \textbf{3}: 139--167.
+	\end{reference}
+
+	Are 3 recognized species (debated!):\\
+	
+	\vspace{0.25cm}
+	
+	\textbf{Africa:}\\
+		\begin{enumerate}
+			\item African savanna elephants (\emph{Loxodonta africana})
+			\item African forest elephants (\emph{Loxodonta cyclotis})
+		\end{enumerate}
+	
+	\vspace{0.25cm}
+	
+	\textbf{Asia:}\\
+		\begin{enumerate}
+			\item[3.] Asian elephants (\emph{Elephas maximus})
+		\end{enumerate}	
+\end{frame}   
+
+
+%-------------------------%
+% Taxonomy IV             %
+%-------------------------%
+\begin{frame}[t]
+\frametitle{Taxonomy}
+\vspace{0.25cm}
+
+	\begin{reference}{4mm}{86mm}
+		\rule{1.5cm}{0.25pt}\\
+		Blanc, J. (2008) \emph{Loxodonta africana}. The IUCN Red List of Threatened Species 2008: e.T12392A3339343.\\
+		Choudhury et al. (2008) \emph{Elephas maximus}. The IUCN Red List of Threatened Species 2008: e.T7140A12828813.
+	\end{reference}
+
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=1.0\textwidth]{figures/africa_range.png}
+			\end{center}
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=1.0\textwidth]{figures/asia_range.png}
+			\end{center}
+		\end{column}
+	\end{columns}
+
+\end{frame} 
+
+
+%-------------------------%
+% Taxonomy V              %
+%-------------------------%
+\begin{frame}[t]
+\frametitle{Taxonomy}
+\vspace{0.25cm}
+
+	\begin{reference}{4mm}{92mm}
+		\rule{1.5cm}{0.25pt}\\
+		Roca et al. (2015) \emph{Annual Review of Animal Biosciences} \textbf{3}: 139--167.
+	\end{reference}
+
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{figures/elephant_tree.png}
+	\end{center}
+\end{frame}   
+
+
+%-----------------------------%
+% Trivia and General Stuff I  %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Trivia and General Stuff}
+\vspace{0.5cm}
+
+	Country C\^{o}te d'Ivoire (``The Ivory Coast'') so-named by the Portuguese and the French in the 15th and 16th centuries due to its (once) abundance of elephants and associated ivory\\
+	
+	\vspace{0.5cm}
+	
+	\begin{center}
+		\includegraphics[width=0.9\textwidth]{figures/west_africa.png}
+	\end{center}
+
+\end{frame}
+
+
+%-----------------------------%
+% Trivia and General Stuff II %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Trivia and General Stuff}
+\vspace{0.25cm}
+	
+	\begin{center}
+		\textbf{``Blind Men and the Elephant''}	
+	\end{center}
+
+	\vspace{0.25cm}
+	
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			\begin{itemize}
+				\item A group of blind men try to conceptualize an elephant based on touching different parts of it
+				\smallskip
+				\item Their descriptions are very different, leading them to think each other is dishonest and/or playing tricks
+				\smallskip
+				\item Comes to blows or death
+				\smallskip
+				\item Moral is that we often claim to know absolute truth based on our own limited and incomplete experiences, and ignore that of others, which may also be true.
+			\end{itemize}
+		\end{column}
+	
+		\begin{column}{0.4\textwidth}
+			\begin{center}
+				\includegraphics[width=0.9\textwidth]{figures/blind.jpg}
+			\end{center}
+		\end{column}
+	\end{columns}
+	
+\end{frame}
+
+
+%-----------------------------%
+% Trivia and General Stuff II %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Trivia and General Stuff}
+\vspace{0.5cm}
+	
+	\begin{center}
+		\begin{block}{Tragedy of the Commons}	
+			Over-exploitation of a shared resource (the ``commons'') when individual ``users'' act in their own self-interest
+		\end{block}
+	\end{center}
+\end{frame}
+
+
+%-----------------------------%
+% Issues I                    %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Some Issues}
+\vspace{0.5cm}
+	
+	\begin{reference}{4mm}{90mm}
+		\rule{1.5cm}{0.25pt}\\
+		Milner-Gulland EJ \& Beddington JR (1997) \emph{Proceedings of the Royal Society of London Series B: Biological Sciences}: \textbf{252}: 29--37.
+	\end{reference}
+
+	
+	In addition to killing for ivory, elephants have also experienced a dramatic reduction in suitable habitat as human populations have expanded throughout Asia and Africa\\
+	
+	\medskip
+	
+	\begin{itemize}
+		\item Difficult to separate out the effects of hunting versus those of habitat loss
+	\end{itemize}
+\end{frame}
+
+
+%-----------------------------%
+% Issues II                   %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Some Issues}
+\vspace{0.5cm}
+		
+	There is not one ``elephant population'' on each continent:
+	
+	\medskip
+	
+	\begin{itemize}
+		\item Divided into a large number of fragmented populations
+		\medskip
+		\item Each has been exploited to a different degree
+		\medskip
+		\item Each has different history and contemporary status
+		\medskip
+		\item Cause of much of the current debate!
+	\end{itemize}
+\end{frame}
+
+
+%-----------------------------%
+% Issues III                  %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Some Issues}
+\vspace{0.5cm}
+
+	History of ivory trade is \textcolor{myblue}{\emph{extremely}} complex, and linked with many other unpleasant aspect of human history:
+	
+	\medskip
+	
+	\begin{itemize}
+		\item Slave trade
+		\medskip
+		\item Racism \& colonialism
+			\smallskip
+			\begin{itemize}
+				\item During much of colonial times, killing by local people was illegal (``poaching''), whereas killing was allowed by Europeans
+				\smallskip
+				\item Disconnect between local communities and the management/conservation of local resources
+			\end{itemize}
+	\end{itemize}
+\end{frame}
+
+
+%-----------------------------%
+% Issues IV                   %
+%-----------------------------%
+\begin{frame}
+\frametitle{Some Issues}
+
+	\begin{center}
+		\href{https://www.youtube.com/watch?v=EKE92ucqBfc}{\Large{European colonization of Africa}}	
+	\end{center}	
+	
+\end{frame}
+
+
+%-----------------------------%
+% Issues IV                   %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Some Issues}
+\vspace{0.5cm}
+
+	Also related to the \textcolor{myblue}{industrial revolution}\\
+	
+	\bigskip
+	
+	\begin{itemize}
+		\item 1760--1840 (approximately) in Europe and the United States
+		\medskip
+		\item Led to unprecedented rise in population growth
+		\medskip
+		\item Also great rise in economic growth and personal wealth
+			\smallskip
+			\begin{itemize}
+				\item Demand for luxury items
+			\end{itemize}
+	\end{itemize}
+		
+	
+\end{frame}
+
+
+%---------------------------%
+%  Focus                    %
+%---------------------------%
+\begin{frame}[t]
+\frametitle{Focus}
+\vspace{0.5cm}
+
+	\begin{reference}{4mm}{90mm}
+		\rule{1.5cm}{0.25pt}\\
+		Choudhury et al. (2008) \emph{Elephas maximus}. The IUCN Red List of Threatened Species 2008: e.T7140A12828813.
+	\end{reference}
+
+	Will focus on \textcolor{myblue}{African} elephants
+	
+		\medskip
+		
+		\begin{itemize}
+			\item Surprisingly difficult to find good information on Asian elephant exploitation history
+			\medskip
+			\item African part of the story is complex enough for one class!
+			\medskip
+			\item African populations larger part of the issues today
+				\smallskip
+				\begin{itemize}
+					\item Though poaching is still a major issue with Asian populations$^{1}$
+				\end{itemize}
+		\end{itemize}
+
+\end{frame}
+
+
+%-----------------------------%
+% North Africa I              %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{North Africa}
+\vspace{0.5cm}
+	
+	Elephants throughout Africa have likely been killed for their tusks at relatively small scales throughout much of history\\
+	
+	\vspace{0.25cm}
+	
+	Used to be elephants in Northern Africa (taxonomic relationship unknown)\\
+	
+	\vspace{0.25cm}
+	
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{figures/northern1.png}\\
+	\end{center}	
+\end{frame}
+
+
+
+%-----------------------------%
+% North Africa II             %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{North Africa}
+\vspace{0.5cm}
+		
+	Egyptian Pharaohs are known to have hunted elephants, and considered ivory a symbol of wealth
+	
+	\vspace{0.25cm}
+	
+	\begin{columns}
+		\begin{column}{0.7\textwidth}
+			\begin{itemize}
+				\item Thutmose III (1458-1425 BC) hunted 120 elephants for their tusks at one time
+				\medskip
+				\item Tutankhamen had many ivory treasures
+				\medskip
+				\item Probably included some Asian as well as African elephants 
+			\end{itemize}
+		\end{column}
+		
+		\begin{column}{0.3\textwidth}
+			\begin{center}
+				\includegraphics[width=0.8\textwidth]{figures/pharaoh.jpg}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+%-----------------------------%
+% North Africa III            %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{North Africa}
+\vspace{0.5cm}
+		
+	Rise of the Roman Empire (27 BC -- 286 AD) caused the extinction of North African elephants\\
+	
+	\vspace{0.25cm}
+	
+	 \begin{columns}
+		\begin{column}{0.6\textwidth}
+			\begin{itemize}
+				\item ``War elephants''
+					\begin{itemize}
+						\item Particularly in the Punic wars between Carthage and Rome
+					\end{itemize}
+				\medskip	
+				\item Demand for ivory
+			\end{itemize}
+			
+			\medskip
+			
+			\begin{center}
+				\includegraphics[width=0.7\textwidth]{figures/war_elephants.jpg}
+			\end{center}
+		\end{column}
+		
+		\begin{column}{0.4\textwidth}
+			\begin{center}
+				\includegraphics[width=1.0\textwidth]{figures/punic.png}\\
+				\medskip
+				\includegraphics[width=1.0\textwidth]{figures/roman_empire.jpg}\\
+			\end{center}
+		\end{column}
+	\end{columns}
+
+\end{frame}
+
+
+%-----------------------------%
+% North Africa IV             %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{North Africa}
+\vspace{0.5cm}
+		
+	In 77 AD, Pliny the Elder (Roman naturalist, philosopher, and author) said ``An ample supply of tusks is now rarely obtained except from India, all the rest of the world having succumbed to luxury.''\\
+	
+	\vspace{0.25cm}
+	
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{figures/pliny.jpg}
+	\end{center}
+	
+\end{frame}
+
+
+%-----------------------------%
+% West Africa I               %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{West Africa}
+\vspace{0.5cm}
+	
+	Lull in demand for ivory for several centuries after Roman Empire\\
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item Portuguese began exploring West African coast, and transporting ivory to Europe in the late 15th century (late 1400s)
+			\end{itemize}
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=1.0\textwidth]{figures/west1.png}
+			\end{center}
+		\end{column}	
+	\end{columns}
+	
+\end{frame}
+
+
+%-----------------------------%
+% West Africa II              %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{West Africa}
+\vspace{0.5cm}
+	
+	Estimated that 100-120 tons of ivory was exported \textcolor{myblue}{\emph{per year}} from this area between 1500--1700.
+	\medskip
+		\begin{itemize}
+			\item \textbf{very} roughly 6,000--7,200 elephants per year
+			\medskip
+			\item $\sim$1,200,000--1,440,000 elephants \textbf{in total} across these 200 years
+		\end{itemize}
+	
+\end{frame}
+
+
+%-----------------------------%
+% West Africa III             %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{West Africa}
+\vspace{0.5cm}
+	
+	Europeans were the major market for this ivory\\
+	
+	\vspace{0.25cm}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item Knife handles
+				\item Combs
+				\item Piano keys
+				\item Billiard balls
+				\item \emph{Trophy hunting}
+			\end{itemize}
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=0.6\textwidth]{figures/piano.jpg}\\
+				\medskip
+				\includegraphics[width=0.6\textwidth]{figures/balls.jpg}\\
+			\end{center}
+		\end{column}	
+	\end{columns}
+\end{frame}
+
+
+%-----------------------------%
+% Central Africa I            %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Central Africa}
+\vspace{0.5cm}
+	
+	Hunting in West Africa totally collapsed by the \textbf{mid 19th-Century}, moved inland towards central Africa	\\
+	
+	\medskip
+	
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{figures/central1.png}\\
+	\end{center}
+\end{frame}
+
+
+%-----------------------------%
+% Central Africa II           %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Central Africa}
+\vspace{0.5cm}
+	
+	Movement also facilitated by colonial expansion\\
+	
+	\bigskip
+	
+	From mid 1800s to mid 1900s, most ivory came from central Africa
+		\medskip
+		\begin{itemize}
+			\item Estimated 352 tonnes per year from 1888--1909
+			\medskip
+			\item Estimated 550,000 elephants killed here between 1889 and 1950
+		\end{itemize}
+\end{frame}
+
+
+%-----------------------------%
+% Eastern Africa I            %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Meanwhile...in Eastern Africa}
+\vspace{0.5cm}
+	
+	Dominated by Portuguese from 16th--19th centuries\\
+	
+	\medskip
+	
+	\begin{center}
+		\includegraphics[width=0.65\textwidth]{figures/east1.png}
+	\end{center}
+\end{frame}
+
+
+%-----------------------------%
+% Eastern Africa II           %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Meanwhile...in Eastern Africa}
+\vspace{0.5cm}
+
+	\begin{reference}{4mm}{92mm}
+		\rule{1.5cm}{0.25pt}\\
+		Beachey (1967) \emph{The Journal of African History} \textbf{8}: 269--290.
+	\end{reference}
+	
+	Peaked around 1830--1856\\
+	
+	\medskip
+	
+	\begin{itemize}
+		\item In 1849, Zanzibar (off Tanzania) exported 297 tonnes of ivory, estimated at 19,000 elephants\\
+	\end{itemize}
+	
+	\medskip
+	Arabs took over trade in 1856--1857
+\end{frame}
+
+
+%-----------------------------%
+% Southern Africa I           %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Meanwhile...in Southern Africa}
+\vspace{0.5cm}
+
+	Populations in southern Africa had been in decline since the 17th century, due largely to hunting by the Dutch (Netherlands) \\
+	
+	\vspace{0.5cm}
+	
+	\begin{center}
+		\includegraphics[width=0.5\textwidth]{figures/southern1.png}
+	\end{center}
+\end{frame}
+
+
+%-----------------------------%
+% Summary                     %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Summary}
+\vspace{0.5cm}
+
+	By 1900, elephant populations across Africa had been greatly reduced\\
+		\medskip
+		\begin{itemize}
+			\item Estimated removal from all of Africa between 1830 and 1930 is 1--5 million
+		\end{itemize}
+	
+	\vspace{0.5cm}
+	
+	\begin{center}
+		\emph{``In the greater part of Africa the elephant is now a thing of the past; and the rate at which they have disappeared is appalling.''} \\- Two travellers in 1900.\\
+	\end{center}
+	
+	\vspace{0.5cm}
+	
+	Driven largely by demand in Europe and the U.S. 
+	
+	\vspace{0.5cm}
+	
+\end{frame}
+
+
+%-----------------------------%
+% Summary                     %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Summary}
+\vspace{0.5cm}
+
+	\begin{reference}{4mm}{90mm}
+		\rule{1.5cm}{0.25pt}\\
+		Sukumar (2003) \emph{The Living Elephants: Evolutionary Ecology, Behavior, and Conservation}. Oxford University Press, New York, NY.
+	\end{reference}
+	
+	From  1830-1856, just under half went directly to Europe and the U.S., over half went through India (which was under British rule from 1858--1947) for ``working'' prior to exportation\\
+	
+	\vspace{0.5cm}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=0.65\textwidth]{figures/india_plot.png}\\
+				\emph{\footnotesize{Imports to India}}
+			\end{center}	
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=0.65\textwidth]{figures/british_plot.png}\\
+				\emph{\footnotesize{Imports to Great Britain}}
+			\end{center}	
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+%-----------------------------%
+% Recovery                    %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Recovery}
+\vspace{0.5cm}
+
+	From $\sim$1900--1950,\\
+	\smallskip 
+	\begin{itemize}
+		\item Decline in elephants,
+		\smallskip
+		\item Drop in ivory prices,
+		\smallskip
+		\item World War I (1914--1918),
+		\smallskip
+		\item Great Depression (1930s), and
+		\smallskip
+		\item World War II (1939--1945) 
+	\end{itemize}
+	
+	\medskip
+	
+	led to a great reduction in elephant hunting, and provided some time for elephants in eastern, central, and southern Africa time to recover somewhat\\
+	
+	\vspace{0.5cm}
+	
+	Those in western Africa were doomed to live as small populations in fragmented landscapes
+
+\end{frame}
+
+
+%-----------------------------%
+% Second Wave I               %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Second Wave}
+\vspace{0.5cm}
+
+	\begin{reference}{4mm}{90mm}
+		\rule{1.5cm}{0.25pt}\\
+		Sukumar (2003) \emph{The Living Elephants: Evolutionary Ecology, Behavior, and Conservation}. Oxford University Press, New York, NY.
+	\end{reference}
+	
+	Hunting came back with a vengeance in 1950\\
+		\medskip
+		\begin{itemize}
+			\item New markets were \textbf{Hong Kong} and \textbf{Japan}
+		\end{itemize}
+
+	\vspace{0.5cm}
+	
+	\begin{center}
+		\includegraphics[width=0.50\textwidth]{figures/1950_exports.png}\\
+				\emph{\footnotesize{Ivory exports from Africa (1950--2000)}}
+	\end{center}
+\end{frame}
+
+
+%-----------------------------%
+% Second Wave II              %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Second Wave}
+\vspace{0.5cm}
+
+	Hong Kong was a major importer of raw ivory, which was then worked and exported largely to Japan and China\\
+	
+	\vspace{0.5cm}
+	
+	60\% of the ivory going to Japan was used to make \textcolor{myblue}{hankos}\\
+	
+	\vspace{0.25cm}
+	
+	\begin{center}
+		\includegraphics[width=0.35\textwidth]{figures/hankos.jpg}
+	\end{center}
+\end{frame}
+
+
+%-----------------------------%
+% Second Wave III             %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Second Wave}
+\vspace{0.5cm}
+
+	Eastern and central Africa the hardest hit during this time:\\
+	
+	\vspace{0.25cm}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item 1981--1989 Kenya population declined from 65,000 to 16,000
+				\smallskip
+				\item Tanzanian population from 204,000 to 61,000\\
+				\smallskip
+				\item East Africa numbers in total declined by 75\%
+			\end{itemize}
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=0.90\textwidth]{figures/africa.png}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+%-----------------------------%
+% Second Wave IV              %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Second Wave}
+\vspace{0.5cm}
+
+	Populations in some locations were the exception, showed stable populations or even growth:\\
+	
+	\vspace{0.25cm}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item Botswana
+				\smallskip
+				\item Namibia
+				\smallskip
+				\item South Africa
+				\smallskip
+				\item Zimbabwe
+			\end{itemize}
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=0.90\textwidth]{figures/africa.png}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+%-----------------------------%
+% International Ban I         %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{International Ban}
+\vspace{0.5cm}
+
+	Due to concern over elephant populations, an \emph{international ban on ivory trade} was agreed upon in 1989, and implemented in 1990\\
+	
+	\vspace{0.5cm}
+	
+	Was also a corresponding push to change public image of purchasing ivory\\
+	
+	\vspace{0.5cm}
+	
+	\begin{center}
+		\includegraphics[width=0.60\textwidth]{figures/campain1.jpg}\\
+		\footnotesize{\emph{Chinese basketball star, Yao Min}}
+	\end{center}
+\end{frame}
+
+
+%-----------------------------%
+% International Ban II        %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{International Ban}
+\vspace{0.5cm}
+
+	After the ban:
+	\medskip
+		\begin{itemize}
+			\item Ivory prices dropped (90\% in Africa, 50\% in international markets)
+			\medskip
+			\item Substantial decline in killing of elephants
+			\medskip
+			\item Owning ivory started falling out of fashion
+		\end{itemize}
+\end{frame}
+
+
+%-----------------------------%
+% Problems                    %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Problems}
+\vspace{0.5cm}
+
+	\begin{enumerate}
+		\item What to do with stockpiles?
+		\medskip
+		\item What to do with ivory obtained by other means (pest elephants, natural deaths, etc.)?
+		\medskip
+		\item What about countries with increasing elephant populations?
+	\end{enumerate}
+\end{frame}
+
+
+%-----------------------------%
+% Problems II                 %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Problems}
+\vspace{0.5cm}
+
+	Some countries destroyed stockpiles\\
+	
+	\vspace{0.5cm}
+		
+	\begin{center}
+		\includegraphics[width=0.70\textwidth]{figures/leakey1.jpg}\\
+		\footnotesize{\emph{Richard Leakey and Kenya burn in 1989}}
+
+	\end{center}
+\end{frame}
+
+
+%-----------------------------%
+% Problems III                %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Problems}
+\vspace{0.5cm}
+
+	Others saw them as a significant source of income, and applied pressure to allow trade of these stockpiles:
+	
+		\bigskip
+		
+		\begin{itemize}
+			\item In 1997 Botswana, Zimbabwe, and Namibia successfully lobbied for legal trade of their elephant ivory.
+			\smallskip
+				\begin{itemize}
+					\item In 1999, these countries were allowed to sell $\sim$50,000 kg of stockpiled ivory to Japan
+				\end{itemize}
+			\bigskip
+			\item In 2000 South Africa successfully lobbied for legal trade of their elephant ivory.
+			\smallskip
+				\begin{itemize}
+					\item In 2008, these countries were allowed to sell $\sim$100,000 kg of stockpiled ivory to Japan and China, valued at $\sim$15.5 million USD
+				\end{itemize}
+		\end{itemize}
+		
+\end{frame}
+
+
+%-----------------------------%
+% Problems IV                 %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Problems}
+\vspace{0.5cm}
+
+	This down-listing, and these sales raised several issues:\\
+	
+	\medskip
+	
+		\begin{enumerate}
+			\item \textbf{International Enforcement:} With ban, \emph{any} traded ivory was illegal. Now some was, some wasn't. How can you tell?
+				\begin{itemize}
+					\item Opens door to illegal trade
+				\end{itemize}
+			\medskip
+			\item \textbf{Local Enforcement:} How to determine that all ivory in stockpile is from a legal source?
+				\begin{itemize}
+					\item Opens door to illegal trade
+				\end{itemize}
+			\medskip
+			\item \textbf{Visuals and cultural impact:} Making some trade legal reduces the ``shame'' in owning ivory
+				\begin{itemize}
+					\item Increases demand again
+				\end{itemize}		
+		\end{enumerate}
+\end{frame}
+
+
+%-----------------------------%
+% Problems V                  %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Problems}
+\vspace{0.5cm}
+	
+	\begin{reference}{4mm}{90mm}
+		\rule{1.5cm}{0.25pt}\\
+		UNEP, CITES, IUCN, TRAFFIC (2013) \emph{Elephants in the Dust - The African Elephant Crisis}. A Rapid Response Assessment. United Nations Environment Porgramme, GRID-Arendal. 
+	\end{reference}
+	
+	By the early-to-mid-2000s, poaching had increased to 1970--1980 levels\\
+	
+	\vspace{2cm}
+	
+	\begin{center}
+		\href{https://www.earthtouchnews.com/environmental-crime/poaching/video-a-brief-history-of-the-elephant-ivory-trade/}{\Large{Video}}
+	\end{center}
+\end{frame}
+
+
+%-----------------------------%
+% Where Are We Now? I         %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Where Are We Now?}
+\vspace{0.5cm}
+
+	\begin{reference}{4mm}{88mm}
+		\rule{1.5cm}{0.25pt}\\
+		Thouless et al. (2016) African Elephant Status Report 2016: an update from the African Elephant Database. Occasional Paper Series of the IUCN Species Survival Commission, No. 60 IUCN / SSC Africa Elephant Specialist Group. IUCN, Gland, Switzerland. vi + 309pp.
+	\end{reference}
+	
+	
+	As of 2016, an estimated $\sim$500,000 elephants remaining in Africa\\
+		\medskip
+		\begin{itemize}
+			\item Southern Africa has by far the majority of these, followed by Eastern Africa\\
+		\end{itemize}
+	
+	\vspace{0.25cm}
+	
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{figures/current_numbers.png}
+	\end{center}	
+\end{frame}
+
+
+%-----------------------------%
+% Where Are We Now? II        %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Where Are We Now?}
+\vspace{0.25cm}
+
+	\begin{reference}{4mm}{88mm}
+		\rule{1.5cm}{0.25pt}\\
+		Thouless et al. (2016) African Elephant Status Report 2016: an update from the African Elephant Database. Occasional Paper Series of the IUCN Species Survival Commission, No. 60 IUCN / SSC Africa Elephant Specialist Group. IUCN, Gland, Switzerland. vi + 309pp.
+	\end{reference}
+	
+	
+	Poaching increased until about 2012, remaining relatively stable since (at high levels!)\\
+	
+	\vspace{0.25cm}
+	
+	\begin{center}
+		\includegraphics[width=0.60\textwidth]{figures/current_poaching.png}\\
+		\vspace{0.25cm}
+		\includegraphics[width=0.650\textwidth]{figures/current_poaching2.png}
+	\end{center}	
+\end{frame}
+
+
+%-----------------------------%
+% Where Are We Now? III       %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Where Are We Now?}
+\vspace{0.25cm}
+
+	\begin{reference}{4mm}{88mm}
+		\rule{1.5cm}{0.25pt}\\
+		Thouless et al. (2016) African Elephant Status Report 2016: an update from the African Elephant Database. Occasional Paper Series of the IUCN Species Survival Commission, No. 60 IUCN / SSC Africa Elephant Specialist Group. IUCN, Gland, Switzerland. vi + 309pp.
+	\end{reference}
+	
+	
+	Poaching is taking place throughout Africa  
+	
+	\vspace{0.25cm}
+	
+	\begin{center}
+		\includegraphics[width=0.50\textwidth]{figures/current_poaching_locations.png}
+	\end{center}	
+\end{frame}
+
+
+%-----------------------------%
+% Where Are We Now? IV        %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Where Are We Now?}
+\vspace{0.25cm}
+
+	\begin{reference}{4mm}{88mm}
+		\rule{1.5cm}{0.25pt}\\
+		Thouless et al. (2016) African Elephant Status Report 2016: an update from the African Elephant Database. Occasional Paper Series of the IUCN Species Survival Commission, No. 60 IUCN / SSC Africa Elephant Specialist Group. IUCN, Gland, Switzerland. vi + 309pp.
+	\end{reference}
+	
+	Major sources are eastern and southern Africa, major destinations are China and Thailand  
+	
+	\vspace{0.25cm}
+	
+	\begin{center}
+		\includegraphics[width=0.60\textwidth]{figures/import-export.png}
+	\end{center}	
+\end{frame}
+
+
+%-----------------------------%
+% Where Are We Now? V         %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Where Are We Now?}
+\vspace{0.5cm}
+
+	\begin{reference}{4mm}{92mm}
+		\rule{1.5cm}{0.25pt}\\
+		Wittemyer et al. (2014) \emph{PNAS} \textbf{111}: 13117--13121.
+	\end{reference}
+	
+	Is thought to be driving many elephant populations to extinction 
+	
+	\vspace{0.25cm}
+	
+	\begin{center}
+		\includegraphics[width=0.70\textwidth]{figures/current_trends.png}
+	\end{center}	
+\end{frame}
+
+
+%-----------------------------%
+% Where Are We Now? VI        %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Where Are We Now?}
+\vspace{0.5cm}
+
+	\begin{reference}{4mm}{92mm}
+		\rule{1.5cm}{0.25pt}\\
+		Wittemyer et al. (2014) \emph{PNAS} \textbf{111}: 13117--13121.
+	\end{reference}
+	
+	\begin{center}
+		\includegraphics[width=0.90\textwidth]{figures/data_table.png}
+	\end{center}	
+\end{frame}
+
+
+%-----------------------------%
+% Where Are We Now? VII       %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Where Are We Now?}
+\vspace{0.5cm}
+
+	\begin{reference}{4mm}{92mm}
+		\rule{1.5cm}{0.25pt}\\
+		1. Gao \& Clark (2014) \emph{Biological Conservation} \textbf{180}: 23--30.
+	\end{reference}
+	
+	China has a long history of using elephant ivory for ``high art'' for the upper classes, going back thousands of years\\
+	 
+	\vspace{0.5cm}
+	
+	\begin{columns}
+		\begin{column}{0.6\textwidth}
+			\begin{itemize}
+				\item Peaked in the Ming (1368-1644 AD) and Qing (1644-1911 AD) dynasties$^{1}$
+				\medskip
+				\item These periods not thought to be major threat to elephant populations
+			\end{itemize}
+		\end{column}
+	
+		\begin{column}{0.4\textwidth}
+			\begin{center}
+				\includegraphics[width=0.9\textwidth]{figures/ball.jpg}\\
+				\tiny{\emph{21 levels!!}}\\
+				\tiny{\emph{National Palace Museum, Taipei}}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+%-----------------------------%
+% Where Are We Now? VIII      %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Where Are We Now?}
+\vspace{0.5cm}
+	
+	\begin{reference}{4mm}{90mm}
+		\rule{1.5cm}{0.25pt}\\
+		UNEP, CITES, IUCN, TRAFFIC (2013) \emph{Elephants in the Dust - The African Elephant Crisis}. A Rapid Response Assessment. United Nations Environment Porgramme, GRID-Arendal. 
+	\end{reference}
+	
+	Markets have declined in many of the historically important areas (Europe, U.S., Japan)
+	
+	\bigskip
+	
+	Has greatly increased in China (by far the largest market now) and Thailand...
+	\smallskip
+		\begin{itemize}
+			\item Greatly increasing individual wealth
+			\smallskip
+			\item Trends in poaching closely match economic trends in China
+		\end{itemize}
+	\bigskip
+	
+	And Africa
+	\smallskip
+		\begin{itemize}
+			\item Growing number of foreign investors and businessmen in the mining and timber sectors
+			\smallskip
+			\item Those involved in infrastructure development projects
+		\end{itemize}
+\end{frame}
+
+
+%-----------------------------%
+% Where Are We Now? IX        %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Where Are We Now?}
+\vspace{0.5cm}
+	
+	In 2016, near-total ban on African ivory import and export in U.S. went into effect
+		\smallskip
+		\begin{itemize}
+			\item In 2018 Trump lifted this ban (trophy hunting imports allowed from Zimbabwe and Zambia)\\
+		\end{itemize}
+	
+	\vspace{0.5cm}
+	
+	Canada has never had such a ban...but does not allow the sale of elephants killed post-1990\\
+		\smallskip
+		\begin{itemize}
+			\item But who knows?\\
+		\end{itemize}
+	
+	\vspace{0.5cm}
+	
+	China has just (January 2018) banned all trade of ivory (!)
+		\smallskip
+		\begin{itemize}
+			\item Some are very optimistic
+			\smallskip
+			\item Some are very pessimistic
+		\end{itemize}	
+\end{frame}
+
+
+%-----------------------------%
+% Other Issues                %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Other Issues}
+\vspace{0.5cm}
+	
+	One poached elephant $\neq$ one poached elephant\\
+	
+	\vspace{0.5cm}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item Elephants have very complex social structures
+				\medskip
+				\item Success of group depends heavily on knowledge of old matriarchs
+			\end{itemize}
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=1.0\textwidth]{figures/matriarch.jpg}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools I            %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Forensic Tools}
+\vspace{0.5cm}
+	
+	\begin{reference}{4mm}{90mm}
+		\rule{1.5cm}{0.25pt}\\
+		\emph{PNAS} (2004) \textbf{101}: 14847--14852.\\
+		\emph{Conservation Biology} (2008) \textbf{22}: 1065--1071.
+	\end{reference}
+
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{figures/wasser1.png}\\
+		\vspace{0.25cm}
+		\includegraphics[width=0.8\textwidth]{figures/wasser2.png}
+	\end{center}
+	
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools II           %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Goal}
+\vspace{0.5cm}
+	
+	Identify source population of confiscated ivory\\
+	\bigskip
+		\begin{itemize}
+			\item Identify what populations are being targeted, and to what degree
+			\bigskip
+			\item Identify where enforcement efforts are working and where they should be improved
+		\end{itemize}
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools III          %
+%-----------------------------%
+\begin{frame}[t]
+\vspace{0.5cm}
+	
+	\includegraphics[width=0.8\textwidth]{figures/wasser1.png}
+	
+	\vspace{0.5cm}
+	
+	\begin{itemize}
+		\item Description and validation of approach
+	\end{itemize}
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools IV           %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Reference Samples}
+\vspace{0.5cm}
+	
+	\begin{columns}
+		\begin{column}{0.5\textwidth}
+			\begin{itemize}
+				\item Tissue \& fecal samples from each location
+				\smallskip
+				\item Genotype at 16 microsatellite loci
+				\smallskip
+				\item Calculate allele frequencies at each location
+				\smallskip
+				\item Use to probabilistically assign tusks to source location
+			\end{itemize}
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\includegraphics[width=1.0\textwidth]{figures/wasser_map1.png}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools V            %
+%-----------------------------%
+\begin{frame}[t]
+\vspace{0.5cm}
+	
+	\begin{columns}[t]
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\textcolor{myblue}{Reference}\\
+				\includegraphics[width=1.0\textwidth]{figures/wasser_map1.png}
+			\end{center}	
+		\end{column}
+		
+		\begin{column}{0.5\textwidth}
+			\begin{center}
+				\textcolor{myblue}{Inferred}\\
+				\includegraphics[width=1.0\textwidth]{figures/wasser_map2.png}
+			\end{center}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools VI           %
+%-----------------------------%
+\begin{frame}[t]
+\vspace{0.5cm}
+	
+	\includegraphics[width=0.8\textwidth]{figures/wasser2.png}
+	
+	\vspace{0.5cm}
+	
+	\begin{itemize}
+		\item Apply their approach to real case studies
+	\end{itemize}
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools VII          %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Samples}
+\vspace{0.5cm}
+	
+	\begin{enumerate}
+		\item In June 2002, 6.5 tons of ivory, said to be stone sculptures, were seized in Singapore
+		\medskip
+			\begin{itemize}
+				\item 532 large tusks
+				\medskip
+				\item 42,000 hankos
+			\end{itemize}
+	\end{enumerate}
+	
+	\vspace{0.5cm}
+	
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{figures/hankos.jpg}
+	\end{center}
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools VIII         %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Samples}
+\vspace{0.5cm}
+	
+	\begin{enumerate}
+		\item In June 2002, 6.5 tons of ivory, said to be stone sculptures, were seized in Singapore
+		\medskip
+			\begin{itemize}
+				\item 532 large tusks
+				\medskip
+				\item 42,000 hankos
+			\end{itemize}
+		\bigskip
+		\item 4 months earlier 100 ivory scraps from making hankos seized in Malawi (``hanko shells'')
+		\bigskip
+		\item May 2006, 3.9 tons of ivory tusks seized in Hong Kong	
+	\end{enumerate}
+	
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools IX           %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Results}
+\vspace{0.5cm}
+	
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{figures/wasser_map3.png}
+	\end{center}
+	
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools X            %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Results}
+\vspace{0.5cm}
+	
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{figures/wasser_map4.png}
+	\end{center}
+	
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools XI            %
+%-----------------------------%
+\begin{frame}[t]
+\vspace{0.5cm}
+	
+	\begin{reference}{4mm}{92mm}
+		\rule{1.5cm}{0.25pt}\\
+		\emph{Science} (2015) \textbf{349}: 84--87
+	\end{reference}
+	
+	\includegraphics[width=0.7\textwidth]{figures/wasser3.png}\\
+	
+	\vspace{0.5cm}
+	
+	
+	\begin{center}
+		\includegraphics[width=0.6\textwidth]{figures/wasser_map5.png}
+	\end{center}
+	
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools XII          %
+%-----------------------------%
+\begin{frame}
+
+	\begin{center}
+		\includegraphics[width=0.95\textwidth]{figures/wasser_map6.png}
+	\end{center}
+	
+\end{frame}
+
+
+%-----------------------------%
+% Forensic Tools XIII         %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Importance}
+\vspace{0.5cm}
+
+	Forensic investigations usually based on \textcolor{myblue}{shipping location} (where they were caught)\\
+	\medskip
+		\begin{itemize}
+			\item May be unrelated to where products originated (or at least the animals used to make the products)
+		\end{itemize}	
+	
+	\vspace{0.5cm}
+	
+	Shows targeted exploitation
+	\medskip
+		\begin{itemize}
+			\item Can see where protection and law enforcement should be focused
+		\end{itemize}
+	
+	\vspace{0.5cm}
+	
+\end{frame}
+
+
+%-----------------------------%
+% Summary I                   %
+%-----------------------------%
+\begin{frame}
+
+	\begin{center}
+		\href{https://www.youtube.com/watch?v=Ojvy4njnDQg}{\Large{Summary Video1}}
+	\end{center}	
+\end{frame}
+
+
+%-----------------------------%
+% Summary II                  %
+%-----------------------------%
+\begin{frame}
+
+	\begin{center}
+		\href{http://www.cbsnews.com/videos/poachers-threaten-survival-of-the-african-elephant}{\Large{Summary Video2}}
+	\end{center}	
+\end{frame}
+
+
+%-----------------------------%
+% Debate                      %
+%-----------------------------%
+\begin{frame}[t]
+\frametitle{Debate}
+\vspace{0.5cm}
+
+	\begin{center}
+		\textcolor{myblue}{Should there be a legal trade in ivory?}\\
+	\end{center}	
+	
+	\vspace{0.5cm}
+	
+	There are good arguments for both sides
+	
+	\vspace{0.5cm}
+	\emph{Starting} references:
+		\begin{enumerate}
+			\item Bennett EL (2015) \emph{Conservation Biology} \textbf{29}: 54--60.
+			\item Biggs \emph{et al.} (2017) \emph{Science} \textbf{358}: 1378--1381.
+			\item Sekar \emph{et al.} (2018) \emph{Science} \textbf{360}: 276.
+		\end{enumerate}
+	
+\end{frame}
+
+
+\end{document}
